@@ -5,7 +5,6 @@ import FastImage from 'react-native-fast-image';
 import {SvgXml} from 'react-native-svg';
 import {squirlce,squirlce_border} from './utils/svg_mask';
 import MaskedView from '@react-native-community/masked-view';
-
 var styles = require('./Styles');
 
 
@@ -13,15 +12,21 @@ const RoomIcon = ({
   path = require('./utils/people.png'),
   width = 40,
   height = 40,
+  style = {},
 }) => {
   const isImageAcceptable = (url) => {
-    const newUrl = url !== undefined && url !== null && url.includes('http') ? {uri: url} : require('./utils/people.png');
+    const newUrl = url !== undefined && url !== null && url.includes('http') ?
+      {
+        uri: url,
+        priority: FastImage.priority.normal,
+        cache:FastImage.cacheControl.cacheOnly,
+      } : require('./utils/people.png');
     return newUrl;
   };
 
 
   return (
-    <View style={{width: width,height: height,marginRight: 10,alignSelf: 'center'}}>
+    <View style={[{width: width,height: height,marginRight: 10,alignSelf: 'center'},style]}>
       <MaskedView
         maskElement={
           <SvgXml

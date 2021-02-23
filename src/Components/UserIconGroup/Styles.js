@@ -7,7 +7,7 @@ module.exports = StyleSheet.create({
     alignSelf: 'center',
     width: 50,
     height: 50,
-    backgroundColor: 'gray',
+    backgroundColor: 'rgba(0,0,0,0.4)',
     justifyContent: 'center',
   },
   mainContainer: {

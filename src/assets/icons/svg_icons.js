@@ -40,3 +40,35 @@ export function chat_icon_line(color) {
 	</g>
 	</svg>`;
 }
+export function login_user(color) {
+	return `<?xml version="1.0" encoding="utf-8"?>
+	<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+	<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+	<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="42.995px" height="42.938px" viewBox="0 0 42.995 42.938" enable-background="new 0 0 42.995 42.938" xml:space="preserve">
+	<g>
+	<g>
+	<path fill=${color} d="M17,22h9c3.866,0,7-3.14,7-7.014V7.013C33,3.14,29.866,0,26,0h-9c-3.866,0-7,3.14-7,7.013v7.973
+	C10,18.86,13.134,22,17,22z M15,7.013C15,5.903,15.897,5,17,5h9c1.103,0,2,0.903,2,2.013v7.973C28,16.097,27.103,17,26,17h-9
+	c-1.103,0-2-0.903-2-2.014V7.013z"/>
+	<path fill=${color} d="M28.995,25H14C6.295,25,0.048,31.225,0.004,38.918C0.004,38.926,0,38.932,0,38.939V39v2.937
+	c0,0.553,0.447,1.001,0.998,1.001h12.005c0.551,0,0.998-0.448,0.998-1.001v-2.998c0-0.553-0.447-1.001-0.998-1.001H5.068
+	C5.597,33.475,9.397,30,14,30h14.995c4.603,0,8.403,3.475,8.932,7.938H22.995c-0.552,0-1,0.531-1,1.187v2.627
+	c0,0.655,0.448,1.187,1,1.187h19c0.552,0,1-0.531,1-1.187v-2.627V39C42.995,31.268,36.727,25,28.995,25z"/>
+	</g>
+	</g>
+	</svg>
+	`	
+}
+export function login_password(color) {
+	return `<?xml version="1.0" encoding="utf-8"?>
+	<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+	<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+	<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	\t width="46.997px" height="23px" viewBox="0 0 46.997 23" enable-background="new 0 0 46.997 23" xml:space="preserve">
+	<path fill=${color} d="M39.997,0h-9c-3.866,0-7,3.134-7,7v2H1.003c-0.552,0-1,0.531-1,1.187v2.627c0,0.655,0.448,1.187,1,1.187h5
+	\tv3.813c0,0.655,0.448,1.187,1,1.187h5c0.552,0,1-0.531,1-1.187V14h10.994v2c0,3.866,3.134,7,7,7h9c3.866,0,7-3.134,7-7V7
+	\tC46.997,3.134,43.863,0,39.997,0z M41.997,16c0,1.103-0.897,2-2,2h-9c-1.103,0-2-0.897-2-2V7c0-1.103,0.897-2,2-2h9
+	\tc1.103,0,2,0.897,2,2V16z"/>
+	</svg>`
+}

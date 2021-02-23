@@ -7,7 +7,11 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import {chat_icon_line, app_logo} from '../../assets/icons/svg_icons';
+import {
+  login_user,
+  login_password,
+  app_logo,
+} from '../../assets/icons/svg_icons';
 import {SvgXml} from 'react-native-svg';
 import Button from '../../Components/Button/index';
 import TextInput from '../../Components/TextInput';
@@ -15,7 +19,7 @@ import Modal from 'react-native-modal';
 
 const styles = require('./Styles');
 const Login = ({
-  svgPath = app_logo('white'),
+  app_icon = app_logo('white'),
   rootStyle = {},
   iconStyle = {
     alignSelf: 'center',
@@ -34,6 +38,8 @@ const Login = ({
   customLoaderStyle = {},
   labelFirst = 'Able',
   labelSecond = 'Component',
+  labelFirstStyle = {},
+  labelSecondStyle = {},
   onPressLogin = () => {},
   showAuthWindowNext = () => {},
 }) => {
@@ -67,19 +73,21 @@ const Login = ({
         <SvgXml
           style={iconStyle}
           fill={'white'}
-          width="80"
-          height="80"
-          xml={svgPath}
+          width="90"
+          height="90"
+          xml={app_icon}
         />
       )}
       <View style={styles.labelContainer}>
-        <Text style={styles.labelFirst}>{labelFirst}</Text>
-        <Text style={styles.labelSecond}>{labelSecond}</Text>
+        <Text style={[styles.labelFirst, labelFirstStyle]}>{labelFirst}</Text>
+        <Text style={[styles.labelSecond, labelSecondStyle]}>
+          {labelSecond}
+        </Text>
       </View>
       <TextInput
-        svgPath={chat_icon_line}
+        svgPath={login_user}
         value={userName}
-        placeholder={'name'}
+        placeholder={'Нэвтрэх нэр'}
         onChangeText={(text) => setUserName(text)}
         activeIconColor={activeIconColor}
         activeBorderColor={activeBorderColor}
@@ -90,8 +98,9 @@ const Login = ({
         containerStyle={inputStyle}
       />
       <TextInput
-        svgPath={chat_icon_line}
+        svgPath={login_password}
         value={password}
+        placeholder={'Нууц үг'}
         onChangeText={(text) => setPassword(text)}
         activeIconColor={activeIconColor}
         activeBorderColor={activeBorderColor}
@@ -100,12 +109,13 @@ const Login = ({
         inActiveBorderHeight={inActiveBorderHeight}
         activeBorderHeight={activeBorderHeight}
         containerStyle={inputStyle}
+        secureTextEntry={true}
       />
       <Button
         containerStyle={[styles.buttonStyle, buttonStyle]}
         customLoaderStyle={[styles.loaderStyle, customLoaderStyle]}
         onPress={async () => {
-          const showAuth = await onPressLogin();
+          const showAuth = await onPressLogin(userName, password);
           if (showAuth === 'show_auth') {
             showModal(true);
           }
@@ -125,7 +135,7 @@ const Login = ({
             }
           </Text>
           <Button
-            containerStyle={{width: '80%',backgroundColor:'#8892a0'}}
+            containerStyle={{width: '80%', backgroundColor: '#8892a0'}}
             label={'Кодоор нэвтрэх'}
             onPress={() => {
               showAuthWindowNext(true);

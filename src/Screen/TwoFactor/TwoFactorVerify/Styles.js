@@ -3,11 +3,9 @@ import {width60} from '../../../assets/dimensions/width';
 
 export default StyleSheet.create({
   logo: {
-    marginTop: 90,
     width: 100,
     height: 100,
     alignSelf: 'center',
-    marginBottom: 50,
   },
   warningText: {
     color: '#8f959c',

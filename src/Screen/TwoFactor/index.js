@@ -8,6 +8,7 @@ const TwoFactor = ({
   hideAuthWindow = () => {},
   checkAuthCode = () => {},
   AuthSuccess = () => {},
+  resetCode = () => {},
   array = [],
 }) => {
   const [twoFactorVerify, showTwoFactorVerify] = useState(false);
@@ -15,8 +16,9 @@ const TwoFactor = ({
   const showTwoFactor = async (value) => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.linear);
     const isSuccess = await sendCodeToValue(value);
-    console.log('isSuccess', isSuccess);
-    showTwoFactorVerify(true);
+    if (isSuccess === 'success') {
+      showTwoFactorVerify(true);
+    }
   };
   const goBack = () => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.linear);
@@ -30,6 +32,7 @@ const TwoFactor = ({
         goBack={() => showTwoFactorVerify(false)}
         checkAuthCode={checkAuthCode}
         AuthSuccess={() => AuthSuccess()}
+        resetCode={() => resetCode()}
       />
     );
   } else {

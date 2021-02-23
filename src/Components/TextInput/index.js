@@ -27,6 +27,7 @@ const App = ({
   activeBorderColor = 'white',
   inActiveIconColor = 'white',
   inActiveBorderColor = 'white',
+  secureTextEntry = false,
 }) => {
   const [focused, setFocused] = useState(false);
   return (
@@ -44,6 +45,7 @@ const App = ({
           onChangeText={(text) => onChangeText(text)}
           value={value}
           style={[styles.textInputStyle, inputStyle]}
+          secureTextEntry={secureTextEntry}
         />
         <SvgXml
           style={styles.iconStyle}

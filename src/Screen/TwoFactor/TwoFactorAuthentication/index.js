@@ -1,21 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
-import {
-  Text,
-  TouchableHighlight,
-  SafeAreaView,
-  Pressable,
-  Image,
-  BackHandler,
-} from 'react-native';
+import {Text, SafeAreaView, Pressable, Image, BackHandler} from 'react-native';
 import styles from './Styles';
 import UserIcon from '../../../Components/UserIcon';
 import Button from '../../../Components/Button';
 import {SvgXml} from 'react-native-svg';
 import {email, mobile} from './utils/svg_icons';
 const TwoFactor = ({
-  userIcon = undefined,
+  path = undefined,
   showTwoFactor = () => {},
   array = [
     {type: 'email', value: 'able@gmail.com'},
@@ -32,6 +25,11 @@ const TwoFactor = ({
       'hardwareBackPress',
       backAction,
     );
+    arrayValues.map((item) => {
+      if (item.selected) {
+        setSelectValue(item.value);
+      }
+    });
     // cleanup function
     return () => {
       backHandler.remove();
@@ -60,7 +58,7 @@ const TwoFactor = ({
         justifyContent: 'center',
         alignSelf: 'center',
       }}>
-      <UserIcon path={userIcon} width={80} height={80} />
+      <UserIcon path={path} width={80} height={80} />
       <Text style={styles.warningText}>
         {
           'Та баталгаажуулах код хүлээн авах утасны дугаар эсвэл и-мэйл хаягаа сонгоно уу!'

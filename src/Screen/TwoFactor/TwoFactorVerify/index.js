@@ -5,10 +5,10 @@ import {
   Text,
   Keyboard,
   TouchableOpacity,
-  Pressable,
   SafeAreaView,
   LayoutAnimation,
   BackHandler,
+  ActivityIndicator,
 } from 'react-native';
 import styles from './Styles';
 import {
@@ -24,13 +24,15 @@ import Button from '../../../Components/Button';
 const TwoFactorVerify = ({
   goBack = () => {},
   cellCount = 6,
-  userIcon = undefined,
+  path = undefined,
   checkAuthCode = () => {},
   AuthSuccess = () => {},
+  resetCode = () => {},
 }) => {
   const [value, setValue] = useState('');
   const [timer, setTimer] = useState(60);
   const [hideIcon, showIcon] = useState(false);
+  const [reseting, setReseting] = useState(false);
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
     value,
     setValue,
@@ -41,7 +43,6 @@ const TwoFactorVerify = ({
   useEffect(() => {
     intervalId = BackgroundTimer.setInterval(() => {
       time -= 1;
-      console.log(time);
       setTimer(time);
       if (time === 0) {
         setTimer(0);
@@ -64,7 +65,6 @@ const TwoFactorVerify = ({
   }, []);
 
   const backAction = () => {
-    goBack();
     return true;
   };
 
@@ -87,12 +87,7 @@ const TwoFactorVerify = ({
       }}>
       {!hideIcon && (
         <>
-          <UserIcon
-            path={userIcon}
-            style={styles.logo}
-            width={80}
-            height={80}
-          />
+          <UserIcon path={path} width={80} height={80} />
           <Text style={styles.warningText}>
             {'Баталгаажуулах кодоо \nоруулна уу!'}
           </Text>
@@ -134,30 +129,27 @@ const TwoFactorVerify = ({
       <TouchableOpacity
         disabled={timer > 0}
         style={styles.subbutton}
-        onPress={() => {
-          time = 60;
-          intervalId = BackgroundTimer.setInterval(() => {
-            time -= 1;
-            setTimer(time);
-            if (time === 60) {
-              setTimer(0);
-              BackgroundTimer.clearInterval(intervalId);
-            }
-          }, 1000);
+        onPress={async () => {
+          setReseting(true);
+          const isSuccess = await resetCode();
+          setReseting(false);
+          if (isSuccess === 'code_reseted') {
+            setValue(0);
+            goBack();
+          }
         }}>
         {timer > 0 ? (
           <Text style={styles.subbuttontext}>{timer}</Text>
+        ) : reseting ? (
+          <ActivityIndicator
+            style={{alignSelf: 'center'}}
+            color={'gray'}
+            size={'small'}
+          />
         ) : (
           <Text style={styles.subbuttontext}>Дахин код авах</Text>
         )}
       </TouchableOpacity>
-      <Pressable
-        style={styles.backButton}
-        onPress={() => {
-          goBack();
-        }}>
-        <Text style={styles.subbuttontext}>Буцах</Text>
-      </Pressable>
     </SafeAreaView>
   );
 };
