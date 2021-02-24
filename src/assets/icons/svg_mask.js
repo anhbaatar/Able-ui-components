@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 export function squirlce_moon() {
   return `<?xml version="1.0" encoding="utf-8"?>
   <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -59,7 +58,7 @@ export function squirlce_border(color) {
 	</svg>
 	`;
 }
-export function squircleBG(color = 'green') {
+export function squircleBG(color = 'white') {
   return `<?xml version="1.0" encoding="utf-8"?>
 	<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 	<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -74,3 +73,20 @@ export function squircleBG(color = 'green') {
 	</svg>
 	`;
 }
+export function squircleBGMoon(color = 'white') {
+  return `<?xml version="1.0" encoding="utf-8"?>
+  <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+  <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	   width="88px" height="88px" viewBox="0 0 88 88" enable-background="new 0 0 88 88" xml:space="preserve">
+  <g>
+	  <path fill=${color} d="M41.472,88C10.442,87.431,0,76.158,0,44.014V88H41.472z"/>
+	  <path fill=${color} d="M0,44.014C0,11.003,11.003,0,44.014,0H0V44.014z"/>
+  </g>
+  <rect display="none" fill="#FFFFFF" width="88" height="88"/>
+  <path fill=${color} d="M74.027,0H44.014C57.42,0,67.146,1.859,74.027,6.229c-6.904,8.349-10.006,20.646-10.006,37.785
+	  c0,17.136,3.101,29.429,10.006,37.785c-6.416,4.074-15.31,5.964-27.35,6.201h27.35H88V0H74.027z"/>
+  </svg>
+  `;
+}
+

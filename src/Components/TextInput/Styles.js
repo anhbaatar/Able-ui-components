@@ -14,7 +14,7 @@ module.exports = StyleSheet.create({
   },
   textInputStyle: {
     color: 'white',
-    fontFamily: 'arialbd',
+    fontFamily: 'Roboto-Bold',
     flexGrow: 1,
     paddingHorizontal: 10,
   },

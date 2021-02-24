@@ -11,7 +11,7 @@ const textInput = {
   borderColor: 'white',
   paddingHorizontal: 10,
   color: 'white',
-  fontFamily: 'arialbd',
+  fontFamily: 'Roboto-Bold',
 };
 module.exports = StyleSheet.create({
   rootContainerStyle: {
@@ -39,13 +39,13 @@ module.exports = StyleSheet.create({
   labelFirst: {
     color: 'white',
     fontSize: 20,
-    fontFamily: 'arialbd',
+    fontFamily: 'Roboto-Bold',
     marginRight: 5,
   },
   labelSecond: {
     color: 'red',
     fontSize: 20,
-    fontFamily: 'arialbd',
+    fontFamily: 'Roboto-Bold',
   },
   loaderStyle: {
     width: 50,
@@ -59,7 +59,7 @@ module.exports = StyleSheet.create({
   },
   Atitle: {
     width: '100%',
-    fontFamily: 'Arial',
+    fontFamily: 'Roboto-Medium',
     fontSize: 18,
     textAlign: 'center',
     color: 'black',

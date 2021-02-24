@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import {View, Platform, UIManager, TouchableOpacity} from 'react-native';
 // import Main, {TextInput, Login, UserIcon} from 'able-soft-component-ui';
 import {
@@ -74,7 +74,7 @@ const App = () => {
         }
       }}
       style={{flex: 1, backgroundColor: 'white', justifyContent: 'center'}}>
-      {authShown ? (
+      {/* {authShown ? (
         <TwoFactorAuthentication
           // array={authArray}
           path={
@@ -103,9 +103,9 @@ const App = () => {
             showAuthWindowNext();
           }}
         />
-      )}
-      {/* <UserIcon path={{uri: change}} />
-      <UserIconGroup /> */}
+      )} */}
+      <UserIcon path={{uri: change}} />
+      <UserIconGroup />
     </TouchableOpacity>
   );
 };

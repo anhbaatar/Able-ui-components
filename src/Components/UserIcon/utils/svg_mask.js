@@ -24,3 +24,18 @@ export function squirlce_border(color) {
 	</svg>
 	`;
 }
+export function squircleBG(color = 'white') {
+  return `<?xml version="1.0" encoding="utf-8"?>
+	<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+	<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+	<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 width="88px" height="88px" viewBox="0 0 88 88" enable-background="new 0 0 88 88" xml:space="preserve">
+	<g>
+		<path fill=${color} d="M0,44v44h44C11,88,0,77,0,44z"/>
+		<path fill=${color} d="M44,88h44V44C88,77,77,88,44,88z"/>
+		<path fill=${color} d="M44,0H0v44C0,11,11,0,44,0z"/>
+		<path fill=${color} d="M44,0c33,0,44,11,44,44V0H44z"/>
+	</g>
+	</svg>
+	`;
+}

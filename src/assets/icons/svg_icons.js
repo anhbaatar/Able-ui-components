@@ -41,7 +41,7 @@ export function chat_icon_line(color) {
 	</svg>`;
 }
 export function login_user(color) {
-	return `<?xml version="1.0" encoding="utf-8"?>
+  return `<?xml version="1.0" encoding="utf-8"?>
 	<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 	<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 	<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -58,10 +58,10 @@ export function login_user(color) {
 	</g>
 	</g>
 	</svg>
-	`	
+	`;
 }
 export function login_password(color) {
-	return `<?xml version="1.0" encoding="utf-8"?>
+  return `<?xml version="1.0" encoding="utf-8"?>
 	<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 	<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 	<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -70,5 +70,5 @@ export function login_password(color) {
 	\tv3.813c0,0.655,0.448,1.187,1,1.187h5c0.552,0,1-0.531,1-1.187V14h10.994v2c0,3.866,3.134,7,7,7h9c3.866,0,7-3.134,7-7V7
 	\tC46.997,3.134,43.863,0,39.997,0z M41.997,16c0,1.103-0.897,2-2,2h-9c-1.103,0-2-0.897-2-2V7c0-1.103,0.897-2,2-2h9
 	\tc1.103,0,2,0.897,2,2V16z"/>
-	</svg>`
+	</svg>`;
 }

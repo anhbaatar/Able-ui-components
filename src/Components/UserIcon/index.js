@@ -3,7 +3,7 @@ import React from 'react';
 import {View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {SvgXml} from 'react-native-svg';
-import {squirlce,squirlce_border} from './utils/svg_mask';
+import {squirlce,squirlce_border,squircleBG} from './utils/svg_mask';
 import MaskedView from '@react-native-community/masked-view';
 var styles = require('./Styles');
 
@@ -26,8 +26,8 @@ const RoomIcon = ({
 
 
   return (
-    <View style={[{width: width,height: height,marginRight: 10,alignSelf: 'center'},style]}>
-      <MaskedView
+    <View style={[{width: width,height: height,alignSelf: 'center'},style]}>
+      {/* <MaskedView
         maskElement={
           <SvgXml
             fill={'#ffffff'}
@@ -35,19 +35,25 @@ const RoomIcon = ({
             height={height}
             rx={20}
             xml={squirlce()}/>
-        }>
+        }> */}
             <FastImage
               style={[styles.userIcon,{width: width,height: height}]}
               source={path.uri ? isImageAcceptable(path.uri) : require('./utils/people.png')}
               resizeMode={FastImage.resizeMode.stretch}
-            />
+      />
+       <SvgXml
+            width={width}
+            height={height}
+            style={{position:'absolute'}}
+            rx={20}
+            xml={squircleBG()}/>
          <SvgXml
             width={width}
             height={height}
             style={{position:'absolute'}}
             rx={20}
-            xml={squirlce_border('rgba(0,0,0,0.2)')}/>
-      </MaskedView>
+            xml={squirlce_border('rgba(0,0,0,0.08)')}/>
+      {/* </MaskedView> */}
     </View>
   );
 };

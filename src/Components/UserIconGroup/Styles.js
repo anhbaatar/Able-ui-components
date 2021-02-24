@@ -19,6 +19,6 @@ module.exports = StyleSheet.create({
     alignSelf: 'center',
     fontSize: 15,
     color: 'white',
-    fontFamily: 'arialbd',
+    fontFamily: 'Roboto-Bold',
   },
 });
